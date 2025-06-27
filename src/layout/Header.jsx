@@ -8,6 +8,7 @@ import {
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { headerNav } from "../config";
+import { Link } from "react-router";
 export function Header() {
   const [opened, { toggle }] = useDisclosure();
   return (
@@ -26,7 +27,8 @@ export function Header() {
             <Title order={2}>Logo</Title>
             <Group ml="xl" gap={20} visibleFrom="sm">
               {headerNav.map((item) => (
-                <UnstyledButton key={item.id}>{item.title}</UnstyledButton>
+                <Link to={item.link}>{item.title}</Link>
+                // <UnstyledButton key={item.id}>{item.title}</UnstyledButton>
               ))}
             </Group>
           </Group>
@@ -39,11 +41,7 @@ export function Header() {
         ))}
       </AppShell.Navbar>
 
-      {/* <AppShell.Main>
-        Navbar is only visible on mobile, links that are rendered in the header
-        on desktop are hidden on mobile in header and rendered in navbar
-        instead.
-      </AppShell.Main> */}
+      
     </AppShell>
   );
 }

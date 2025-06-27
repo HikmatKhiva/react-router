@@ -4,11 +4,13 @@ import App from "./App.jsx";
 import { MantineProvider } from "@mantine/core";
 import '@mantine/core/styles.css';
 import "./index.css";
+import { RouterProvider } from "react-router";
+import { router } from "./Routes.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <MantineProvider>
-      <App />
+      <RouterProvider  router={router} />
     </MantineProvider>
   </StrictMode>
 );

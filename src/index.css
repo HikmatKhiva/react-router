@@ -1,0 +1,9 @@
+.products-flex {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.products-flex > div {
+  flex: 1 1 300px;
+}
