@@ -7,6 +7,7 @@ import {
   Rating,
   Spoiler,
 } from "@mantine/core";
+import { Link } from "react-router";
 const CardComponent = ({ product }) => {
   return (
     <Card shadow="sm" padding="lg" radius="md" withBorder>
@@ -26,9 +27,10 @@ const CardComponent = ({ product }) => {
         </Text>
       </Group>
       <Rating value={product.rating.rate} fractions={2} readOnly />
-      <Spoiler maxHeight={40} showLabel="Show more" hideLabel="Hide">
+      <Spoiler maxHeight={50} showLabel="Show more" hideLabel="Hide">
         {product.description}
       </Spoiler>
+      <Link to={`${product.id}`}>Detail</Link>
       <Button color="blue" fullWidth mt="md" radius="md">
         Book classic tour now
       </Button>

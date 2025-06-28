@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CardComponent from "../components/CardComponent";
+import Loading from "../components/Loading";
 const ShopPage = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);

@@ -27,7 +27,7 @@ export function Header() {
             <Title order={2}>Logo</Title>
             <Group ml="xl" gap={20} visibleFrom="sm">
               {headerNav.map((item) => (
-                <Link to={item.link}>{item.title}</Link>
+                <Link key={item.id} to={item.link}>{item.title}</Link>
                 // <UnstyledButton key={item.id}>{item.title}</UnstyledButton>
               ))}
             </Group>

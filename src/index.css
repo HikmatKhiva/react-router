@@ -7,3 +7,16 @@
 .products-flex > div {
   flex: 1 1 300px;
 }
+
+.page-loading {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff8e;
+}
