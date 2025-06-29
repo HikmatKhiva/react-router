@@ -5,6 +5,9 @@ import { lazy, Suspense } from "react";
 import Loading from "./components/Loading";
 import ProductDetail from "./pages/ProductDetail";
 const ShopPage = lazy(() => import("./pages/ShopPage"));
+import PageNotFound from "./pages/PageNotFound";
+import AdminLayout from "./admin/layout/AdminLayout";
+import AdminHomePage from "./admin/pages/AdminHomePage";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -16,7 +19,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "shop",
-        children: [
+        children: [ 
           {
             index: true,
             element: (
@@ -33,4 +36,19 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path:'/admin',
+    element:<AdminLayout />,
+    children:[
+      {
+        index:true,
+        element:<AdminHomePage />
+      }
+    ]
+  },
+  {
+    path: "*",
+    element: <PageNotFound />,
+  }
+
 ]);
